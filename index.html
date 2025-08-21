@@ -39,10 +39,10 @@
     <table id="carTable">
       <thead>
         <tr>
+          <th>Region</th>
+          <th>Marque</th>
           <th>Nom</th>
-          <th>PP</th>
           <th>Prix</th>
-          <th>Catégorie</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -53,13 +53,13 @@
         .then(response => response.json())
         .then(data => {
           const tableBody = document.querySelector('#carTable tbody');
-          data.cars.forEach(car => {
+          data.legends.forEach(cars => {
             const row = document.createElement('tr');
             row.innerHTML = `
-              <td>${car.name}</td>
-              <td>${car.pp}</td>
-              <td>${car.price}</td>
-                <td>${car.category}</td>
+              <td>${cars.region	}</td>
+              <td>${cars.manufacturer}</td>
+              <td>${cars.name}</td>
+              <td>${cars.credits}</td>
           `  ;
             tableBody.appendChild(row);
           });
