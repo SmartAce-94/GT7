@@ -142,7 +142,7 @@ fetch("https://ddm999.github.io/gt7info/data.json")
   .then(r => r.json())
   .then(data => {
     const date = new Date(data.legend.date);
-    document.getElementById("legend-last-updated").textContent = `Last updated on ${date}`;
+    document.getElementById("legend-last-updated").textContent = `Last updated on ${Date}`;
   });
 </script>
   </body>
