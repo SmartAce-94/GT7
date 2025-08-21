@@ -73,6 +73,7 @@
     <div class="table-container">
       <div class="table-block">
     <h2>Legendary Cars For Sell</h2>
+    <span id="legend-last-updated"></span>
     <table id="LegendaryCarTable">
       <thead>
         <tr>
@@ -135,7 +136,17 @@
           });
         });
     </script>  
-    
+
+    <script>
+fetch("https://ddm999.github.io/gt7info/data.json")
+  .then(r => r.json())
+  .then(data => {
+    const date = new Date(data.legend.date);
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+    const formatted = date.toLocaleString('en-US', options);
+    document.getElementById("legend-last-updated").textContent = `Last updated on ${formatted}`;
+  });
+</script>
   </body>
   
 </html>
