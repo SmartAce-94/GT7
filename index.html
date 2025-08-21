@@ -41,6 +41,19 @@
       th {
         background-color: #f4f4f4
       }
+
+      .table-container {
+        display: flex;
+        justify-content: center;
+        gap: 40px; /* Espace entre les tableaux */
+        flex-wrap: wrap; /* Permet de passer en colonne sur petit écran */
+        margin-top: 30px;
+      }
+
+      .table-block {
+        flex: 1 1 400px; /* Largeur minimale et flexible */
+        max-width: 600px;
+      }
       
     </style>
     
@@ -50,7 +63,8 @@
     
       <img src="GT7-HEADER-2-3840.png" alt="Bannière GT7 Data Collector" class="image-pleine-largeur">
       <h1>GT7 DATA COLLECTOR</h1>
-    
+    <div class="table-container">
+      <div class="table-block">
     <h2>Legendary Cars For Sell</h2>
     <table id="LegendaryCarTable">
       <thead>
@@ -63,10 +77,11 @@
         </tr>
       </thead>
       <tbody> </tbody>
-      </table>
-    
-    <p><br></p>
+    </table>
 
+      </div>
+    <div class="table-block">    
+        
     <h2>Used Cars For Sell</h2>
       <table id="UsedCarTable">
       <thead>
@@ -81,7 +96,9 @@
       <tbody> </tbody>
       
     </table>
-
+    </div>
+    </div>
+    
     <script>
       fetch('https://ddm999.github.io/gt7info/data.json')
         .then(response => response.json())
