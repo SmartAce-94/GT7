@@ -31,7 +31,7 @@
         border-collapse: collapse;
       }
       
-      th, td {
+      table th, table td {
         border-collapse: collapse;
         border: 1px solid black;
         padding: 8px 12px;
@@ -39,7 +39,7 @@
         vertical-align: middle;
       }
       
-      th {
+      table th {
         background-color: #f4f4f4
       }
       
@@ -79,7 +79,7 @@
               <td>${car.region	}</td>
               <td>${car.manufacturer}</td>
               <td>${car.name}</td>
-              <td>${car.credits.toLocaleString()} Cr</td>
+              <td>${car.credits.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'")} Cr</td>
           	`;
             tbody.appendChild(row);
           });
