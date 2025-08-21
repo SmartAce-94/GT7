@@ -25,18 +25,23 @@
         height: auto;
         display: block;
       }
+      .styled-table-1 {
+          margin: 0 auto; /* ← Centre le tableau horizontalement */
+          border-collapse: collapse;
+      }
       
     </style>
     
   </head>
   
   <body>
+    
       <img src="GT7-HEADER-2-3840.png" alt="Bannière GT7 Data Collector" class="image-pleine-largeur">
       <h1>GT7 DATA COLLECTOR</h1>
       <p>Voici ma première page GitHub.</p> 
 
      <h1>Voitures GT7</h1>
-    <table id="carTable">
+    <table id="LegendaryCarTable" class="styled-table-1">
       <thead>
         <tr>
           <th>Region</th>
@@ -45,26 +50,10 @@
           <th>Prix</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        
+      </tbody>
     </table>
-
-    <script>
-      fetch('https://ddm999.github.io/gt7info/data.json')
-        .then(response => response.json())
-        .then(data => {
-          const tableBody = document.querySelector('#carTable tbody');
-          data.legends.forEach(cars => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-              <td>${cars.region	}</td>
-              <td>${cars.manufacturer}</td>
-              <td>${cars.name}</td>
-              <td>${cars.credits}</td>
-          `  ;
-            tableBody.appendChild(row);
-          });
-        });
-    </script>
 
   </body>
   
