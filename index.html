@@ -71,7 +71,26 @@
         
       </tbody>
     </table>
-
+    
+    <script>
+      fetch('https://ddm999.github.io/gt7info/data.json')
+        .then(response => response.json())
+        .then(data => {
+          const tbody = document.getElementById('LegendaryCarTable');
+	        const availablelegendaries = data.find(c => c.categorie === "legend");
+          availablelegendaries.cars.forEach(car => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${cars.region	}</td>
+              <td>${cars.manufacturer}</td>
+              <td>${cars.name}</td>
+              <td>${cars.credits}</td>
+          `  ;
+            tbody.appendChild(row);
+          });
+        });
+    </script>
+    
   </body>
   
 </html>
