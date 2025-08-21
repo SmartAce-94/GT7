@@ -77,7 +77,7 @@
       <thead>
         <tr>
           <th> </th>
-          <th align-items: left> </th>
+          <th> </th>
           <th>Manufacturer</th>
           <th>Name</th>
           <th>Price</th>
@@ -116,7 +116,7 @@
             row.innerHTML = `
               <td> <img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' alt='${car.carid}' height="80"></td>
               <td> <img src= 'https://flagcdn.com/24x18/${car.region.toLowerCase()}.png' alt=${car.region.toUpperCase()}> </td>
-              <td> ${car.manufacturer} </td>
+              <td align-items: center> ${car.manufacturer} </td>
               <td>${car.name}</td>
               <td>${car.credits.toLocaleString('fr-FR')} Cr</td>
           	`;
