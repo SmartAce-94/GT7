@@ -42,6 +42,18 @@
         background-color: #f4f4f4
       }
       
+      .container {
+        display: flex;
+        gap: 20px; /* espace entre les colonnes */
+      }
+
+      .colonne {
+        flex: 1; /* chaque colonne prend la moitié de l'espace */
+        padding: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+      }
+      
     </style>
     
   </head>
@@ -52,6 +64,8 @@
       <h1>GT7 DATA COLLECTOR</h1>
       <p> </p> 
     
+    <div class="container">
+      <div class="colonne">
     <h2>Legendary Cars For Sell</h2>
     <table id="LegendaryCarTable">
       <thead>
@@ -66,7 +80,8 @@
       <tbody>
         
       </tbody>
-
+    </div>
+    <div class="colonne">
     <h2>Used Cars For Sell</h2>
       <table id="UsedCarTable">
       <thead>
@@ -83,7 +98,8 @@
       </tbody>
       
     </table>
-    
+      </div>
+    </div>
     <script>
       fetch('https://ddm999.github.io/gt7info/data.json')
         .then(response => response.json())
