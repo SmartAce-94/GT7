@@ -34,6 +34,38 @@
       <img src="GT7-HEADER-2-3840.png" alt="Bannière GT7 Data Collector" class="image-pleine-largeur">
       <h1>GT7 DATA COLLECTOR</h1>
       <p>Voici ma première page GitHub.</p> 
+
+     <h1>Voitures GT7</h1>
+    <table id="carTable">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>PP</th>
+          <th>Prix</th>
+          <th>Catégorie</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      fetch('https://ddm999.github.io/gt7info/data.json')
+        .then(response => response.json())
+        .then(data => {
+          const tableBody = document.querySelector('#carTable tbody');
+          data.cars.forEach(car => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${car.name}</td>
+              <td>${car.pp}</td>
+              <td>${car.price}</td>
+                <td>${car.category}</td>
+          `  ;
+            tableBody.appendChild(row);
+          });
+        });
+    </script>
+
   </body>
   
 </html>
