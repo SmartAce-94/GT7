@@ -26,27 +26,23 @@
         display: block;
       }
       
-      .styled-table-1 {
-          margin: 0 auto;
-          border-collapse: collapse;
+      table {
+        margin: 0 auto;
+        border-collapse: collapse;
       }
       
-      .styled-table-1 th {
-          background-color: #f4f4f4;
-          border-collapse: collapse;
-          border: 1px solid black;
-          padding: 8px 12px;
-          text-align: center;
-          vertical-align: middle;
+      th, td {
+        border-collapse: collapse;
+        border: 1px solid black;
+        padding: 8px 12px;
+        text-align: center;
+        vertical-align: middle;
       }
       
-      .styled-table-1 td {
-          border-collapse: collapse;
-          border: 1px solid black;
-          padding: 8px 12px;
-          text-align: center;
-          vertical-align: middle;
+      th {
+        background-color: #f4f4f4
       }
+      
     </style>
     
   </head>
@@ -55,10 +51,10 @@
     
       <img src="GT7-HEADER-2-3840.png" alt="Bannière GT7 Data Collector" class="image-pleine-largeur">
       <h1>GT7 DATA COLLECTOR</h1>
-      <p>Voici ma première page GitHub.</p> 
+      <p> </p> 
 
      <h2>Voitures légendaires en vente</h2>
-    <table id="LegendaryCarTable" class="styled-table-1">
+    <table id="LegendaryCarTable">
       <thead>
         <tr>
           <th>Region</th>
@@ -83,7 +79,7 @@
               <td>${car.region	}</td>
               <td>${car.manufacturer}</td>
               <td>${car.name}</td>
-              <td>${car.credits} Cr</td>
+              <td>${car.credits.toLocaleString()} Cr</td>
           	`;
             tbody.appendChild(row);
           });
