@@ -90,7 +90,7 @@
           data.legend.cars.forEach(car => {
             const row = document.createElement('tr');
             row.innerHTML = `
-              <td><img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' alt='${car.carid}' height="150"></td>
+              <td><img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' alt='${car.carid}' height="100"></td>
               <td><img src= 'https://flagcdn.com/36x27/${car.region.toLowerCase()}.png' alt=${car.region.toUpperCase()}></td>
               <td>${car.manufacturer}</td>
               <td>${car.name}</td>
@@ -109,7 +109,7 @@
           data.used.cars.forEach(car => {
             const row = document.createElement('tr');
             row.innerHTML = `
-              <td><img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' alt='${car.carid}' height="150"></td>
+              <td><img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' alt='${car.carid}' height="100"></td>
               <td><img src= 'https://flagcdn.com/36x27/${car.region.toLowerCase()}.png' alt=${car.region.toUpperCase()}></td>
               <td>${car.manufacturer}</td>
               <td>${car.name}</td>
