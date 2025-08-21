@@ -56,10 +56,11 @@
     <table id="LegendaryCarTable">
       <thead>
         <tr>
-          <th>Region</th>
-          <th>Marque</th>
-          <th>Nom</th>
-          <th>Prix</th>
+          <th>Picture</th>
+          <th>Country</th>
+          <th>Manufacturer</th>
+          <th>Name</th>
+          <th>Price</th>
         </tr>
       </thead>
       <tbody>
@@ -75,7 +76,8 @@
           data.legend.cars.forEach(car => {
             const row = document.createElement('tr');
             row.innerHTML = `
-              <td><img src= 'https://flagcdn.com/48x36/${car.region.toLowerCase()}.png' alt=${car.region.toUpperCase()}></td>
+              <td><img src= 'https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' alt=${car.carid}></td>
+              <td><img src= 'https://flagcdn.com/36x27/${car.region.toLowerCase()}.png' alt=${car.region.toUpperCase()}></td>
               <td>${car.manufacturer}</td>
               <td>${car.name}</td>
               <td>${car.credits} Cr</td>
