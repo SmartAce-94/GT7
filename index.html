@@ -89,6 +89,7 @@
     <div class="table-block">    
         
     <h2>Used Cars For Sell</h2>
+      <span id="used-last-updated"></span>
       <table id="UsedCarTable">
       <thead>
         <tr>
@@ -141,6 +142,12 @@
       fetch("https://ddm999.github.io/gt7info/data.json")
       .then(r => r.json())
       .then(data => {document.getElementById("legend-last-updated").textContent = `Last updated on ${data.legend.date}`;});
+    </script>
+
+    <script>
+      fetch("https://ddm999.github.io/gt7info/data.json")
+      .then(r => r.json())
+      .then(data => {document.getElementById("used-last-updated").textContent = `Last updated on ${data.used.date}`;});
     </script>
   </body>
   
