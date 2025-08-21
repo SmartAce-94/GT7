@@ -61,14 +61,6 @@
         flex: 1 1 400px; /* Largeur minimale et flexible */
         max-width: 600px;
       }
-
-      .manufacturer-cells {
-          display: flex;
-          align-items: center;         /* Centre verticalement */
-          justify-content: flex-start; /* Aligne à gauche */
-          padding: 8px;                /* Optionnel : ajoute un peu d’air */
-          height: 100%;    
-      }
       
     </style>
     
@@ -121,7 +113,7 @@
             const row = document.createElement('tr');
             row.innerHTML = `
               <td><img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' alt='${car.carid}' height="80"></td>
-              <td class="manufacturer-cells">
+              <td>
                 <img src= 'https://flagcdn.com/24x18/${car.region.toLowerCase()}.png' alt=${car.region.toUpperCase()}>
                 <span> &nbsp; ${car.manufacturer} </td> </span>
               <td>${car.name}</td>
@@ -141,7 +133,7 @@
             const row = document.createElement('tr');
             row.innerHTML = `
               <td><img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' alt='${car.carid}' height="80"></td>
-              <td class="manufacturer-cells">
+              <td>
                 <img src= 'https://flagcdn.com/24x18/${car.region.toLowerCase()}.png' alt=${car.region.toUpperCase()}>
                 &nbsp;
                 ${car.manufacturer}</td>
