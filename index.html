@@ -52,7 +52,7 @@
       <h1>GT7 DATA COLLECTOR</h1>
       <p> </p> 
     
-     <h2>Legendary Cars For Sell</h2>
+    <h2>Legendary Cars For Sell</h2>
     <table id="LegendaryCarTable">
       <thead>
         <tr>
@@ -66,6 +66,22 @@
       <tbody>
         
       </tbody>
+
+    <h2>Used Cars For Sell</h2>
+      <table id="UsedCarTable">
+      <thead>
+        <tr>
+          <th>Picture</th>
+          <th>Country</th>
+          <th>Manufacturer</th>
+          <th>Name</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+      
     </table>
     
     <script>
@@ -87,6 +103,25 @@
         });
     </script>
     
+    <script>
+      fetch('https://ddm999.github.io/gt7info/data.json')
+        .then(response => response.json())
+        .then(data => {
+          const tbody = document.getElementById('UsedCarTable');
+          data.used.cars.forEach(car => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td><img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' alt='${car.carid}'></td>
+              <td><img src= 'https://flagcdn.com/36x27/${car.region.toLowerCase()}.png' alt=${car.region.toUpperCase()}></td>
+              <td>${car.manufacturer}</td>
+              <td>${car.name}</td>
+              <td>${car.credits} Cr</td>
+          	`;
+            tbody.appendChild(row);
+          });
+        });
+    </script>  
+  
   </body>
   
 </html>
