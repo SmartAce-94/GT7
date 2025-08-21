@@ -81,10 +81,10 @@
           availablelegendaries.cars.forEach(car => {
             const row = document.createElement('tr');
             row.innerHTML = `
-              <td>${cars.region	}</td>
-              <td>${cars.manufacturer}</td>
-              <td>${cars.name}</td>
-              <td>${cars.credits}</td>
+              <td>${car.region	}</td>
+              <td>${car.manufacturer}</td>
+              <td>${car.name}</td>
+              <td>${car.credits}</td>
           `  ;
             tbody.appendChild(row);
           });
