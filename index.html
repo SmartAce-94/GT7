@@ -141,13 +141,13 @@
     <script>
       fetch("https://ddm999.github.io/gt7info/data.json")
       .then(r => r.json())
-      .then(data => {document.getElementById("legend-last-updated").textContent = `Last updated on ${data.legend.date}`;});
+      .then(data => {document.getElementById("legend-last-updated").textContent = `Updated on ${data.legend.date}`;});
     </script>
 
     <script>
       fetch("https://ddm999.github.io/gt7info/data.json")
       .then(r => r.json())
-      .then(data => {document.getElementById("used-last-updated").textContent = `Last updated on ${data.used.date}`;});
+      .then(data => {document.getElementById("used-last-updated").textContent = `Updated on ${data.used.date}`;});
     </script>
   </body>
   
