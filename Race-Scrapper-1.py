@@ -1,29 +1,16 @@
-import requests
-from bs4 import BeautifulSoup
 import json
+from datetime import datetime
 
-url = "https://gran-turismo.fandom.com/wiki/Sport_Mode_(GT7)/Daily_Races"
-headers = {"User-Agent": "Mozilla/5.0"}
-response = requests.get(url, headers=headers)
-soup = BeautifulSoup(response.text, "html.parser")
+# Générer un timestamp
+now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-tables = soup.find_all("table", {"class": "wikitable"})
-latest_table = tables[-1]
-rows = latest_table.find_all("tr")[1:]
+# Créer un dictionnaire simple
+data = {
+    "last_updated": now
+}
 
-# Extraire les 3 dernières courses
-last_three = []
-for row in rows[-3:]:
-    cells = row.find_all("td")
-    if len(cells) >= 5:
-        last_three.append({
-            "date": cells[0].text.strip(),
-            "type": cells[1].text.strip(),
-            "car": cells[2].text.strip(),
-            "track": cells[3].text.strip(),
-            "notes": cells[4].text.strip()
-        })
-
-# Sauvegarder dans un fichier JSON
+# Écrire dans le fichier JSON
 with open("Daily-Races-1.json", "w", encoding="utf-8") as f:
-    json.dump(last_three, f, ensure_ascii=False, indent=2)
+    json.dump(data, f, ensure_ascii=False, indent=2)
+
+print("✅ Fichier Daily-Races-1.json mis à jour avec le timestamp.")
