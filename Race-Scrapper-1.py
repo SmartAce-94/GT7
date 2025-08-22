@@ -25,5 +25,5 @@ for row in rows[-3:]:
         })
 
 # Sauvegarder dans un fichier JSON
-with open("courses.json", "w", encoding="utf-8") as f:
+with open("Daily-Races-1.json", "w", encoding="utf-8") as f:
     json.dump(last_three, f, ensure_ascii=False, indent=2)
