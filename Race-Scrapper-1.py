@@ -14,7 +14,10 @@ if response.status_code != 200:
     exit(1)
 
 soup = BeautifulSoup(response.text, "html.parser")
-tables = soup.find_all("table", {"class": "wikitable"})
+
+# Utilisation de select() pour plus de fiabilité
+tables = soup.select("table.wikitable")
+print(f"📊 Nombre de tableaux trouvés : {len(tables)}")
 
 if not tables:
     print("⚠️ Aucun tableau trouvé. Le format de la page a peut-être changé.")
@@ -22,14 +25,18 @@ if not tables:
 
 latest_table = tables[-1]
 rows = latest_table.find_all("tr")[1:]
+print(f"📄 Nombre de lignes dans le dernier tableau : {len(rows)}")
 
 if len(rows) < 3:
     print("⚠️ Pas assez de lignes pour extraire les 3 dernières courses.")
     exit(1)
 
 last_three = []
-for row in rows[-3:]:
+for i, row in enumerate(rows[-3:], start=1):
     cells = row.find_all("td")
+    cell_texts = [cell.text.strip() for cell in cells]
+    print(f"🔹 Ligne {i} : {cell_texts}")
+
     if len(cells) >= 5:
         last_three.append({
             "date": cells[0].text.strip(),
@@ -38,6 +45,8 @@ for row in rows[-3:]:
             "track": cells[3].text.strip(),
             "notes": cells[4].text.strip()
         })
+    else:
+        print(f"⚠️ Ligne {i} ignorée : pas assez de colonnes ({len(cells)})")
 
 # Ajouter un timestamp
 data = {
@@ -49,4 +58,4 @@ data = {
 with open("Daily-Races-1.json", "w", encoding="utf-8") as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
 
-print("✅ Fichier Daily-Races-1.json mis à jour avec les dernières courses.")
+print(f"✅ Fichier Daily-Races-1.json mis à jour avec {len(last_three)} course(s).")
