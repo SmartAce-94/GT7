@@ -29,4 +29,7 @@ jobs:
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
     - name: Commit du fichier JSON mis à jour
-      run: 
+      run: |
+        git add Daily-Races-1.json
+        git commit -m "Mise à jour des courses GT7 avec Race-Updater-1"
+        git push
