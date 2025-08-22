@@ -61,6 +61,13 @@
         flex: 1 1 400px; /* Largeur minimale et flexible */
         max-width: 600px;
       }
+
+      .small-italic {
+  font-style: italic;
+  font-size: 0.85em;
+  margin-top: 4px; /* diminue la marge au-dessus */
+  color: #444;     /* optionnel : couleur plus douce */
+}
       
     </style>
     
@@ -89,7 +96,7 @@
     <div class="table-block">    
         
     <h2>Used Cars For Sell</h2>
-      <p id="used-last-updated" style="font-style: italic; font-size: 0.85em;"></p>
+      <p id="used-last-updated" class="small-italic"></p>
       <table id="UsedCarTable">
       <thead>
         <tr>
