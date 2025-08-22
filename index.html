@@ -62,12 +62,8 @@
         max-width: 600px;
       }
 
-      .small-italic {
-  font-style: italic;
-  font-size: 0.85em;
-  margin-top: 0px; /* diminue la marge au-dessus */
-}
-      
+      .text-small-italic { font-style: italic ; font-size: 0.8em ; margin-top: 0px }
+        
     </style>
     
   </head>
@@ -79,7 +75,7 @@
     <div class="table-container">
       <div class="table-block">
     <h2>Legendary Cars For Sell</h2>
-    <span id="legend-last-updated"></span>
+    <p id="legend-last-updated" class="text-small-italic"></p>
     <table id="LegendaryCarTable">
       <thead>
         <tr>
@@ -95,7 +91,7 @@
     <div class="table-block">    
         
     <h2>Used Cars For Sell</h2>
-      <p id="used-last-updated" class="small-italic"></p>
+      <p id="used-last-updated" class="text-small-italic"></p>
       <table id="UsedCarTable">
       <thead>
         <tr>
@@ -111,9 +107,9 @@
     </div>
 
 <h3>Disclaimer and Acknowledgments</h3> 
-<p style="font-style: italic; font-size: 0.8em;"> Legendary cars for sell data is collected from https://ddm999.github.io/gt7info/data.json : Thanks to ddm999 </p>
-<p style="font-style: italic; font-size: 0.8em;"> Used cars for sell data is collected from https://ddm999.github.io/gt7info/data.json : Thanks to ddm999 </p>
-<p style="font-style: italic; font-size: 0.8em;"> Daily sport races data is scrapped from https://gran-turismo.fandom.com/wiki/Sport_Mode_(GT7)/Daily_Races : Thanks to Fandom Company </p>
+<p class="text-small-italic"> Legendary cars for sell data is collected from https://ddm999.github.io/gt7info/data.json : Thanks to ddm999 </p>
+<p class="text-small-italic"> Used cars for sell data is collected from https://ddm999.github.io/gt7info/data.json : Thanks to ddm999 </p>
+<p class="text-small-italic"> Daily sport races data is scrapped from https://gran-turismo.fandom.com/wiki/Sport_Mode_(GT7)/Daily_Races : Thanks to Fandom Company </p>
     
     <script>
       fetch('https://ddm999.github.io/gt7info/data.json')
