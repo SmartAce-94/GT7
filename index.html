@@ -147,7 +147,8 @@
           });
         });
     </script>
-    
+  
+//SCRIPT REMPLISSAGE TABLEAU VOITURES D'OCCASION
     <script>
       fetch('https://ddm999.github.io/gt7info/data.json')
         .then(response => response.json())
@@ -161,7 +162,7 @@
           : `<td></td>`;
             
             row.innerHTML = `
-              <td> car.state </td>
+              <td> ${car.state} </td>
               ${trophyCell}
               <td>
                 <img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' 
@@ -176,19 +177,21 @@
           });
         });
     </script>  
-
+  
+//SCRIPT RECUPERATION DATE DERNIERE MISE A JOUR VOITURES LEGENDAIRES
     <script>
       fetch("https://ddm999.github.io/gt7info/data.json")
       .then(r => r.json())
       .then(data => {document.getElementById("legend-last-updated").textContent = `Updated on ${data.legend.date}`;});
     </script>
 
+//SCRIPT RECUPERATION DATE DERNIERE MISE A JOUR VOITURES D'OCCASION
     <script>
       fetch("https://ddm999.github.io/gt7info/data.json")
       .then(r => r.json())
       .then(data => {document.getElementById("used-last-updated").textContent = `Updated on ${data.used.date}`;});
     </script>
-  </body>
 
+</body>
 </html>
   
