@@ -161,8 +161,12 @@
           ? `<td style="text-align: right; vertical-align: middle;"> <img src="trophee.png" height="30"></td>`
           : `<td></td>`;
 
-          const carState = car.state !== "normal"
-            
+          let carState = "";
+          if (car.state === "new") {carState = "NEW";} 
+          else if (car.state === "limited") {carState = "LIMITED";} 
+          else if (car.state === "soldout") {carState = "SOLDOUT";}
+          else {carState = "";}
+    
             row.innerHTML = `
               <td> ${carState} </td>
               ${trophyCell}
