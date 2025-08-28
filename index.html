@@ -84,6 +84,7 @@
               <th> </th>
               <th> </th>
               <th> </th>
+              <th> </th>
             </tr>
            </thead>
          <tbody> </tbody>
@@ -124,6 +125,10 @@
           data.legend.cars.forEach(car => {
             const row = document.createElement('tr');
             row.innerHTML = `
+              <td> <img 
+                    src="trophee.png"
+                    height="50"
+                   > </td>
               <td> <img 
                     src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' 
                     onerror="this.onerror=null; this.src='https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car${car.carid}.png';"
