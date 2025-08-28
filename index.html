@@ -162,13 +162,15 @@
           : `<td></td>`;
 
           let carState = "";
-          if (car.state === "new") {carState = "NEW";} 
-          else if (car.state === "limited") {carState = "LIMITED";} 
-          else if (car.state === "soldout") {carState = "SOLDOUT";}
-          else {carState = "";}
+          let couleur = "";
+            
+          if (car.state === "new") {carState = "NEW";couleur = "vert";} 
+          else if (car.state === "limited") {carState = "LIMITED";couleur = "bleu";} 
+          else if (car.state === "soldout") {carState = "SOLDOUT";couleur = "rouge";}
+          else {carState = "";couleur = "";}
     
             row.innerHTML = `
-              <td> ${carState} </td>
+              <td style="color:${couleur}">${carState}</td>
               ${trophyCell}
               <td>
                 <img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' 
