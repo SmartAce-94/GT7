@@ -164,13 +164,13 @@
           let carState = "";
           let couleur = "";
             
-          if (car.state === "new") {carState = "NEW";couleur = "vert";} 
-          else if (car.state === "limited") {carState = "LIMITED";couleur = "bleu";} 
-          else if (car.state === "soldout") {carState = "SOLDOUT";couleur = "rouge";}
+          if (car.state === "new") {carState = "NEW";couleur = "green";} 
+          else if (car.state === "limited") {carState = "LIMITED";couleur = "blue";} 
+          else if (car.state === "soldout") {carState = "SOLDOUT";couleur = "red";}
           else {carState = "";couleur = "";}
     
             row.innerHTML = `
-              <td style="color:${couleur}">${carState}</td>
+              <td style="color:${couleur}"> ${carState} </td>
               ${trophyCell}
               <td>
                 <img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' 
