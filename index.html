@@ -158,14 +158,40 @@
           const trophyCell = car.trophycar !== null
           ? `<td style="text-align: right; vertical-align: middle;"> <img src="trophee.png" height="30"></td>`
           : `<td></td>`;
+
+          const statusLabel = {
+          "new": "NEW",
+          "soldout": "SOLDOUT",
+          "limited": "STOCK LIMITED"
+          };
+
+          const badge = car.status && statusLabel[car.status]
+          ? `<div style="
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background-color: red;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            box-shadow: 0 0 2px rgba(0,0,0,0.5);
+            ">
+            ${statusLabel[car.status]}
+            </div>`
+            : '';
             
             row.innerHTML = `
               ${trophyCell}
-              <td> <img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' 
+              <td>
+              <div style="position: relative; display: inline-block;">
+              ${badge}
+              <img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' 
                         onerror="this.onerror=null; this.src='https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car${car.carid}.png';"
                         alt='${car.carid}'
                         height="80" 
-                    > </td>
+                    > </div> </td>
               <td> <img src= 'https://flagcdn.com/24x18/${car.region.toLowerCase()}.png' alt=${car.region.toUpperCase()}> </td>
               <td style="text-align: left;"> ${car.manufacturer} <br> ${car.name} <br> ${car.credits.toLocaleString('fr-FR')} Cr </td>
           	`;
