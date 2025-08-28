@@ -130,15 +130,38 @@
         const trophyCell = car.trophycar !== null
           ? `<td style="text-align: right; vertical-align: middle;"> <img src="trophee.png" height="30"></td>`
           : `<td></td>`;
+     
+          let carState = "";
+          let couleur = "";
             
+          if (car.state === "new") {carState = "NEW";couleur = "green";} 
+          else if (car.state === "limited") {carState = "LIMITED";couleur = "blue";} 
+          else if (car.state === "soldout") {carState = "SOLDOUT";couleur = "red";}
+          else {carState = "";couleur = "";}
+    
             row.innerHTML = `
               ${trophyCell}
-              <td> <img 
-                    src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' 
+              <td style="position: relative;">
+                ${carState ? `<span style="
+                    position: absolute;
+                    top: 5px;
+                    left: 5px;
+                    background-color: ${couleur};
+                    color: white;
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    font-size: 10px;
+                    font-weight: bold;
+                    z-index: 2;
+                    ">
+                  ${carState}
+                  </span>` : ""}
+                  <img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' 
                     onerror="this.onerror=null; this.src='https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnails/car${car.carid}.png';"
-                    alt='${car.carid}' 
-                    height="80"
-                    > </td>
+                    alt='${car.carid}'
+                    height="80" 
+                    >
+                </td>
               <td> <img src= 'https://flagcdn.com/24x18/${car.region.toLowerCase()}.png' alt=${car.region.toUpperCase()}> </td>
               <td style="text-align: left;"> ${car.manufacturer} <br> ${car.name} <br> ${car.credits.toLocaleString('fr-FR')} Cr </td>
           	`;
@@ -179,7 +202,7 @@
                     color: white;
                     padding: 4px 8px;
                     border-radius: 4px;
-                    font-size: 12px;
+                    font-size: 10px;
                     font-weight: bold;
                     z-index: 2;
                     ">
