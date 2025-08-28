@@ -159,32 +159,9 @@
           const trophyCell = car.trophycar !== null
           ? `<td style="text-align: right; vertical-align: middle;"> <img src="trophee.png" height="30"></td>`
           : `<td></td>`;
-
-          const statusLabel = {
-          "new": "NEW",
-          "soldout": "SOLDOUT",
-          "limited": "STOCK LIMITED"
-          };
-
-          const badge = car.status && statusLabel[car.status]
-          ? `<div style="
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            background-color: red;
-            color: white;
-            font-size: 10px;
-            font-weight: bold;
-            padding: 2px 6px;
-            border-radius: 4px;
-            box-shadow: 0 0 2px rgba(0,0,0,0.5);
-            ">
-            ${statusLabel[car.status]}
-            </div>`
-            : '';
             
             row.innerHTML = `
-              ${badge}
+              ${car.status}
               ${trophyCell}
               <td>
                 <img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' 
