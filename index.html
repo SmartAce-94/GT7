@@ -141,7 +141,12 @@
           data.used.cars.forEach(car => {
             const row = document.createElement('tr');
             row.innerHTML = `
-              <td> <img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' alt='${car.carid}' height="80"></td>
+              <td> <img id= "CarImage" 
+                        src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' 
+                        onerror="this.onerror=null; this.src='https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png';"
+                        height="80" 
+                        alt='${car.carid}' 
+                    />
               <td> <img src= 'https://flagcdn.com/24x18/${car.region.toLowerCase()}.png' alt=${car.region.toUpperCase()}> </td>
               <td style="text-align: left;"> ${car.manufacturer} <br> ${car.name} <br> ${car.credits.toLocaleString('fr-FR')} Cr </td>
           	`;
@@ -162,6 +167,6 @@
       .then(data => {document.getElementById("used-last-updated").textContent = `Updated on ${data.used.date}`;});
     </script>
   </body>
-  
+
 </html>
   
