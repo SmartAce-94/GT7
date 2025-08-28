@@ -160,9 +160,11 @@
           const trophyCell = car.trophycar !== null
           ? `<td style="text-align: right; vertical-align: middle;"> <img src="trophee.png" height="30"></td>`
           : `<td></td>`;
+
+          const carState = car.state !== "normal"
             
             row.innerHTML = `
-              <td> ${car.state} </td>
+              <td> carState </td>
               ${trophyCell}
               <td>
                 <img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' 
