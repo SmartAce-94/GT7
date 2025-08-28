@@ -141,8 +141,7 @@
           data.used.cars.forEach(car => {
             const row = document.createElement('tr');
             row.innerHTML = `
-              <td> <img id= "CarImage" 
-                        src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' 
+              <td> <img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' 
                         onerror="this.onerror=null; this.src='https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png';"
                         height="80" 
                         alt='${car.carid}'
