@@ -170,7 +170,11 @@
           else {carState = "";couleur = "";}
     
             row.innerHTML = `
-              <td> <span style="border: 2px solid ${couleur}; padding: 4px; border-radius: 4px; color: ${couleur};"> ${carState} </span> </td>
+              <td> 
+              ${carState ? `<span style="border: 2px solid ${couleur}; padding: 4px; border-radius: 4px; color: ${couleur};">
+              ${carState}
+              </span>` : ""}
+              </td>
               ${trophyCell}
               <td>
                 <img src= 'https://images.weserv.nl/?url=https://www.gran-turismo.com/common/dist/gt7/carlist/car_thumbnail/car${car.carid}.png' 
